@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+
+  database:
+
+    # Build the image using this directory as the context.
+    build:
+      context: ./database
+
+    # Set the image to run.
+    image: database
+    
+    # Set default mysql root password.
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      
+    # Expose port 3306 to host. Not for the application but
+    # handy to inspect the database from the host machine.
+    ports:
+      - "3306:3306"
+    
+    # Always restart.
+    restart: always
