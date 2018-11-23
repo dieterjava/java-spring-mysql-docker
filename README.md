@@ -35,7 +35,7 @@ Follow these steps to build and run it using the `docker-compose` command.
 		178ad180d158        database            "docker-entrypoint.s…"   12 minutes ago      Up 12 minutes       0.0.0.0:3306->3306/tcp, 33060/tcp   java-spring-mysql-docker_database_1
 
 
-	Notice how it prepended the working directory as and appended a number to the image name.  This is to ensure uniqueness.
+	Notice how it prepended the working directory and appended a number to the image name.  This is to ensure uniqueness.
 
 1.	We can use this unique name to log into our container and run some queries:
 
