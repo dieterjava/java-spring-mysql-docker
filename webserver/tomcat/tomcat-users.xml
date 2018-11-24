@@ -1,7 +1,8 @@
-<?xml version='1.0' encoding='cp1252'?>
-<tomcat-users>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This is file is the default realm for the Manager App and Host Manager applications.
+-->
+<tomcat-users>  
 	<user username="system" password="manager" roles="admin-gui,manager-gui" />
-	<role rolename="manager-script"/>
-	<user username="admin" password="admin" roles="manager-script"/>
 </tomcat-users>
 
