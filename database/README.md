@@ -29,6 +29,12 @@ mysql               5.7                 ae6b78bedf88        7 days ago          
 	* We use the `-p` flag to map port 3306 on our host machine to port 3306 in the container.  Now, we can log into our container and run queries.
 	* We use th `-d` flag to run in "detached" mode (i.e. in the background).
 
+1.  Confirm the container is running:
+
+		docker ps -f "ancestor=mysqlondocker"
+		
+	You should see `tomcatondocker` listed.
+
 1. Let's extract the container id because that is needed to connect directly to it.  Set this variable in your shell for use later on:
 
 		container_id=$(docker ps -f "ancestor=mysqlondocker" -q)

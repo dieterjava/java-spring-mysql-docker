@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+
+  webserver:
+
+    # Build the image using this directory as the context.
+    build: 
+      context: ./webserver
+
+    # Set the image to run.
+    image: webserver
+    
+    # open ports for Tomcat home.
+    ports:
+      - "8000:8000"
+
+    # Always restart.
+    restart: always
