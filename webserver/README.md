@@ -46,7 +46,7 @@ tomcat              7-jre8              2f92e08259d6        2 days ago          
 		
 1.  Now, let's log into to our instance:
 
-		docker exec -t -i ${container_id} bash-c 'echo $CATALINA_HOME'
+		docker exec -t -i ${container_id} bash -c 'echo $CATALINA_HOME'
 
 		
 	Check to see that the CATALINA_HOME variable was set for us:

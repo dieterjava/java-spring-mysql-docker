@@ -8,8 +8,5 @@ COPY tomcat/tomcat-users.xml $CATALINA_HOME/conf/
 COPY tomcat/run.sh $CATALINA_HOME/bin/run.sh
 RUN chmod +x $CATALINA_HOME/bin/run.sh
 
-# Expose Manager application port.
-EXPOSE 8080
-
 # Call startup script.
 CMD ["run.sh"]
