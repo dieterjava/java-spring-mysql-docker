@@ -11,9 +11,9 @@ services:
     # Set the image to run.
     image: webserver
     
-    # open ports for Tomcat home.
+    # Open ports for Tomcat home.
     ports:
-      - "8000:8000"
+      - "8080:8080"
 
     # Always restart.
     restart: always
