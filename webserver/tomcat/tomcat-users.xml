@@ -2,7 +2,14 @@
 <!--
 This is file is the default realm for the Manager App and Host Manager applications.
 -->
-<tomcat-users>  
-	<user username="system" password="manager" roles="admin-gui,manager-gui" />
+<tomcat-users>
+    <!-- Role for /manager/html -->
+    <role rolename="manager-gui"/>
+
+    <!-- Role for /manager/text -->
+    <role rolename="manager-script"/>
+
+    <!-- One user, both roles -->
+    <user username="admin" password="admin" roles="manager-gui,manager-script" />
 </tomcat-users>
 
