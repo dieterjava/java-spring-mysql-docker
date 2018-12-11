@@ -25,19 +25,18 @@ Follow these steps to build and run MySQL using the `docker-compose` command.
 
 	At the start you will see some output like this:
 	
-		Recreating java-spring-mysql-docker_database_1 ... done
+		Creating MysqlContainer ... done
 		
 	And when you run a `docker ps` you will see it as well:
 	
 		CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                               NAMES
-		178ad180d158        database            "docker-entrypoint.s…"   12 minutes ago      Up 12 minutes       0.0.0.0:3306->3306/tcp, 33060/tcp   java-spring-mysql-docker_database_1
+		178ad180d158        database            "docker-entrypoint.s…"   12 minutes ago      Up 12 minutes       0.0.0.0:3306->3306/tcp, 33060/tcp   MysqlContainer
 
+	Notice how it our container is named `MysqlContainer`.  We configured this with the `container_name` field.
+	
+1.	We can use this name to log into our container and run some queries:
 
-	Notice how it prepended the working directory and appended a number to the image name.  This is to ensure uniqueness.
-
-1.	We can use this unique name to log into our container and run some queries:
-
-		docker exec -t -i java-spring-mysql-docker_database_1 bash -c "mysql -u demouser -pdemopass"
+		docker exec -t -i MysqlContainer bash -c "mysql -u demouser -pdemopass"
 		
 1.	Shut down and remove our container like this:
 
@@ -68,19 +67,19 @@ Follow these steps to build and run Tomcat using the `docker-compose` command.
 
 	At the start you will see some output like this:
 	
-		Creating java-spring-mysql-docker_webserver_1 ... done
+		Creating TomcatContainer ... done
 		
 	And when you run a `docker ps` you will see it as well:
 	
 		CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                               NAMES
-		d127b6c4842a        webserver           "run.sh"            28 seconds ago      Up 27 seconds       0.0.0.0:8000->8000/tcp, 8080/tcp   java-spring-mysql-docker_webserver_1
+		d127b6c4842a        webserver           "run.sh"            28 seconds ago      Up 27 seconds       0.0.0.0:8000->8000/tcp, 8080/tcp   TomcatContainer
 
 
-	Notice how it prepended the working directory and appended a number to the image name.  This is to ensure uniqueness.
+	Notice how it our container is named `TomcatContainer`.  We configured this with the `container_name` field.
 
 1.	We can use this unique name to log into our container and run some queries:
 
-		docker exec -t -i java-spring-mysql-docker_webserver_1 bash -c 'echo $CATALINA_HOME'
+		docker exec -t -i TomcatContainer bash -c 'echo $CATALINA_HOME'
 		
 1.	Shut down and remove our container like this:
 

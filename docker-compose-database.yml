@@ -22,3 +22,6 @@ services:
     
     # Always restart.
     restart: always
+
+    # Nicer container name.
+    container_name: MysqlContainer
