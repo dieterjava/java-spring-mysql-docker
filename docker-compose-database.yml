@@ -10,6 +10,10 @@ services:
 
     # Set the image to run.
     image: database
+
+    # Use lower-case table names.
+    command:
+      --lower_case_table_names=1
     
     # Set default mysql root password.
     environment:
