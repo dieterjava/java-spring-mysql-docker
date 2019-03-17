@@ -24,8 +24,8 @@ services:
     ports:
       - "3306:3306"
     
-    # Always restart.
-    restart: always
+    # Restart on failure, up to max-retries attempts.
+    restart: on-failure:10
 
     # Nicer container name.
     container_name: MysqlContainer

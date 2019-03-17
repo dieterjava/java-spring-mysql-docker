@@ -16,8 +16,8 @@ services:
       - "8080:8080"
       - "8000:8000"
 
-    # Always restart.
-    restart: always
+    # Restart on failure, up to max-retries attempts.
+    restart: on-failure:10
 
     # Nicer container name.
     container_name: TomcatContainer
